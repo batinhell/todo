@@ -1,0 +1,8 @@
+.center-block {
+    width: 300px;
+}
+
+.done {
+  text-decoration: line-through;
+  color: grey;
+}
