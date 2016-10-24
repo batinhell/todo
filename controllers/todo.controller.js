@@ -10,7 +10,7 @@
         vm.remaining = remaining;
         vm.edit = edit;
         vm.save = save;
-        vm.revert = revert;
+        vm.remove = remove;
 
         vm.todos = [
             {text: 'do a barell roll', done: true, editing: false},
@@ -36,6 +36,11 @@
         function save(todo) {
             todo.editing = false;
             todo.done = false;
+        }
+
+        function remove(todo) {
+            var index = vm.todos.indexOf(todo);
+            vm.todos.splice(index, 1);
         }
 
     }
