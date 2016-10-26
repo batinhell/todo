@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Card view <a class="btn btn-default" ui-sref='editCard({id: vm.card.id})' role="button">edit card</a></h2>
+            <div class="panel panel-primary">
+                <div class="panel-heading">{{vm.card.title}}</div>
+                <div class="panel-body">
+                    <span>{{vm.remaining(vm.card)}} of {{vm.card.todos.length}} remaining</span>
+                </div>
+
+                <div class="panel-body">
+                <form ng-submit="vm.addTodo(vm.card)">
+                    <input type="text" ng-model="vm.card.newTodo"
+                    placeholder="add new todo here" class="form-control">
+                </form>
+                </div>
+                
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="checkbox" ng-repeat='todo in vm.card.todos track by $index'>
+                            <label ng-class='{done: todo.done}' ng-if='!todo.editing' ng-dblclick='vm.edit(todo)'>
+                                <input type="checkbox" ng-change='vm.toggle(vm.card, todo)' ng-model='todo.done'>{{todo.text}}
+                            </label>
+                            <button class="remove" ng-click='vm.remove(vm.card, todo)'>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                            <form ng-submit="vm.save(vm.card, todo)" ng-if='todo.editing'>
+                                <input class="form-control" ng-model="todo.text" todo-focus='todo.editing'>
+                            </form>
+                        </div> 
+                    </li>
+                </ul>
+                 
+            </div>
+        </div>
+    </div>
+</div> 

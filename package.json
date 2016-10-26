@@ -1,0 +1,23 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.server.js",
+  "scripts": {
+    "start": "node app.server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batinhell/todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/batinhell/todo/issues"
+  },
+  "homepage": "https://github.com/batinhell/todo#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "serve-static": "^1.11.1"
+  }
+}

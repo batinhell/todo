@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app='todo'>
+    <head>
+        <base href="/">
+        <script src="/bower/angular/angular.js"></script>
+        <script src="/bower/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="app.js"></script>
+        <script src="controllers/todo.controller.js"></script>
+        <script src="controllers/card.controller.js"></script>
+        <script src="controllers/editcard.controller.js"></script>
+        <script src="services/store.service.js"></script>
+        <script src="services/card.service.js"></script>
+        <script src="directives/focus.js"></script>
+        <script src="directives/card.js"></script>
+        <link rel="stylesheet" href="todo.css">
+        <link rel="stylesheet" href="/bower/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" ui-sref="home">Home</a>
+                </div>
+            </div>
+        </nav>
+        <ui-view></ui-view>
+    </body>
+</html>

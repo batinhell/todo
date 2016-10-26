@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading"><a ui-sref="card({id: card.id})">{{card.title}}</a></div>
+    <div class="panel-body">
+        <span>{{vm.remaining(card)}} of {{card.todos.length}} remaining</span>
+    </div>
+
+    <div class="panel-body">
+    <form ng-submit="vm.addTodo(card)">
+        <input type="text" ng-model="card.newTodo"
+        placeholder="add new todo here" class="form-control">
+    </form>
+    </div>
+    
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="checkbox" ng-repeat='todo in card.todos track by $index'>
+                <label ng-class='{done: todo.done}' ng-if='!todo.editing' ng-dblclick='vm.edit(todo)'>
+                    <input type="checkbox" ng-change='vm.toggle(card, todo)' ng-model='todo.done'>{{todo.text}}
+                </label>
+                <button class="remove" ng-click='vm.remove(card, todo)'>
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+                <form ng-submit="vm.save(card, todo)" ng-if='todo.editing'>
+                    <input class="form-control" ng-model="todo.text" todo-focus='todo.editing'>
+                </form>
+            </div> 
+        </li>
+    </ul>
+     
+</div>
+
+
+
