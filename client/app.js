@@ -1,6 +1,6 @@
 (function () {
 
-    angular.module('todo', ['ui.router']).
+    angular.module('todo', ['ui.router', 'ngSanitize', 'ui.select']).
         config(config);
 
     function config($stateProvider, $locationProvider) {
@@ -38,10 +38,16 @@
                         return Store.getCardById($stateParams.id);
                     }
                 }
+            },
+            {
+                name: 'access',
+                url: '/access',
+                controller: 'AccessController as vm',
+                templateUrl: 'templates/access.html'
             }
 
 
-        ]
+        ];
 
         states.forEach(function(state) {
             $stateProvider.state(state);
@@ -49,6 +55,6 @@
 
 
         $locationProvider.html5Mode(true);
-    };
+    }
 
 }());

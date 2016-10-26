@@ -8,18 +8,29 @@
         <script src="controllers/todo.controller.js"></script>
         <script src="controllers/card.controller.js"></script>
         <script src="controllers/editcard.controller.js"></script>
+        <script src="controllers/access.controller.js"></script>
         <script src="services/store.service.js"></script>
         <script src="services/card.service.js"></script>
         <script src="directives/focus.js"></script>
         <script src="directives/card.js"></script>
-        <link rel="stylesheet" href="todo.css">
+        <script src="directives/access/access.js"></script>
+        <script src="/bower/jquery/dist/jquery.min.js"></script>
+        <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/bower/angular-ui-select/dist/select.min.js"></script>
+        <script src="/bower/angular-sanitize/angular-sanitize.min.js"></script>
+
+
         <link rel="stylesheet" href="/bower/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/bower/angular-ui-select/dist/select.min.css">
+        <link rel="stylesheet" href="todo.css">
     </head>
     <body>
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" ui-sref="home">Home</a>
+                    <a class="navbar-brand" ui-sref="access">Access Management</a>
+                                            
                 </div>
             </div>
         </nav>

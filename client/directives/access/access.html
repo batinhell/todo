@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Users</div>
+    <div class="panel-body">
+        <form class="form-inline" ng-submit='addUser()'>
+            <div class="form-group">
+                <ui-select ng-model="user.name">
+                    <ui-select-match placeholder="Start typing user name">
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (users | filter: $select.search) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <select
+                class="form-control"
+                ng-model='user.access'
+                ng-options='option for option in options'
+            >
+            </select>
+            <button type="submit" class="btn btn-default">Add</button>
+        </form>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat='user in added_users track by $index'>{{user.name}}
+            <span class="badge delete" ng-click='removeUser(user)'>x</span>
+            <span class="badge" ng-class="{'active': user.access == 'read'}">read</span>
+            <span class="badge" ng-class="{'active': user.access == 'write'}">write</span>
+            <span class="badge" ng-class="{'active': user.access == 'admin'}">admin</span>
+            
+        </li>
+    </ul>
+</div>

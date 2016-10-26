@@ -95,7 +95,6 @@
                 var deferred = $q.defer();
 
                 var i = store.cards.indexOf(card);
-                var card = store.cards[i];
                 var index = card.todos.indexOf(todo);
                 card.todos.splice(index, 1);
                 store.cards[i] = card;

@@ -40,4 +40,33 @@ button {
     color: #cc9a9a;
 }
 
+.form-control.access-search {
+    width: 550px;
+}
+
+.list-group .badge {
+    background-color: #fff;
+    color: #7479ca;
+}
+
+.list-group .badge.active {
+    background-color: #7479ca;
+    color: #fff;
+}
+
+.ui-select-bootstrap>.ui-select-match>.btn {
+    min-width: 500px;
+}
+.ui-select-bootstrap {
+    min-width: 500px;
+}
+
+.ui-select-bootstrap>input[type=search] {
+    min-width: 500px;
+}
+
+.badge.delete {
+    color: #cc9a9a;
+    cursor: pointer;
+}
 
